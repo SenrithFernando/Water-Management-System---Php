@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <style>
+      /* Style for the loading overlay */
+       #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      /* Style for the loading spinner 
+       .loading-spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite; 
+     } 
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      } */
+
+
+
+      * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.loader-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #333;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    animation:  1s linear infinite; 
+}
+
+.loader {
+	position: relative;
+	width: 10vw;
+	height: 5vw;
+	padding: 1.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader span {
+	position: absolute;
+	height: 0.8vw;
+	width: 0.8vw;
+	border-radius: 50%;
+	background-color: #ff0;
+}
+
+.loader span:nth-child(1) {
+	animation: loading-dotsA 0.5s infinite linear;
+}
+
+.loader span:nth-child(2) {
+	animation: loading-dotsB 0.5s infinite linear;
+}
+
+@keyframes loading-dotsA {
+	0% {
+		transform: none;
+	}
+	25% {
+		transform: translateX(2vw);
+	}
+	50% {
+		transform: none;
+	}
+	75% {
+		transform: translateY(2vw);
+	}
+	100% {
+		transform: none;
+	}
+}
+
+@keyframes loading-dotsB {
+	0% {
+		transform: none;
+	}
+	25% {
+		transform: translateX(-2vw);
+	}
+	50% {
+		transform: none;
+	}
+	75% {
+		transform: translateY(-2vw);
+	}
+	100% {
+		transform: none;
+	}
+}
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Loading overlay -->
+    <div id="loading-overlay">
+      <div class="loading-spinner">
+        
+        
+      <div class="loader-div" id="loader-div">
+  <span class="loader">
+    <span></span>
+    <span></span>
+  </span>
+</div>
+
+</div>
+    </div>
+
+    <!-- Page content -->
+    <h1></h1>
+    <div class="loader-div" id="loader-div">
+        <span class="loader">
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+
+
+
+
+
+
+
+
+    
+
+    <script>
+        // Show the loading overlay when the page is loaded
+        window.addEventListener("load", function() {
+          // Hide the loading overlay
+          document.getElementById("loader-div").style.display = "none";
+          
+          // Change the window location to a different page
+          setTimeout(function() {
+            // window.location.href = "https://www.example.com";
+            window.location = 'main.php';
+          }, 3000);
+        });
+      </script>
+  </body>
+</html>
